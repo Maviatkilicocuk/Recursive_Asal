@@ -1,0 +1,30 @@
+package Giris;
+import java.util.Scanner;
+
+public class Recursive_Asal {
+
+    static boolean asal(int a, int i) {
+        if (a <= 2) {
+            return (a == 2);
+        }
+        if (a % i == 0) {
+            return false;
+        }
+        if (i * i > a) {
+            return true;
+        }
+        return asal(a, i + 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Asal olup olmadığını bulmak istediğiniz sayıyı giriniz: ");
+        int x = input.nextInt();
+
+        if (asal(x, 2)) {
+            System.out.println(x + " Asal sayıdır.");
+        } else {
+            System.out.println(x + " Asal değildir.");
+        }
+    }
+}
